@@ -1,7 +1,16 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to('.square', {
+var winH = window.outerHeight;
+
+gsap.to('.square_one', {
     x: 500,
     rotate: 180,
-    duration: 5
+    scrollTrigger: {
+        trigger: '.square_one',
+        start: "top top",
+        end: winH,
+        markers: true,
+        scrub: true,
+        pin: true
+    }
 })
